@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,3 +21,12 @@ jobs:
 
       - name: Run unit tests
         run: ./mvnw -Dtest=ExpenseServiceTest test
+
+      - name: Build JAR
+        run: ./mvnw -DskipTests package
+
+      - name: Upload JAR artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: paytrack-build
+          path: target/*.jar
