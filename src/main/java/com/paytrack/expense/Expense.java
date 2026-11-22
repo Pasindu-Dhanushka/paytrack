@@ -84,9 +84,24 @@ public class Expense {
         return status;
     }
 
-    // ✏️ Setter for status
-    public void setStatus(ExpenseStatus status) {
-        this.status = status;
+    public void approve() {
+    if (status != ExpenseStatus.PENDING) {
+        throw new IllegalStateException(
+            "Only pending expenses can be approved"
+        );
+    }
+
+        status = ExpenseStatus.APPROVED;
+    }
+
+    public void reject() {
+        if (status != ExpenseStatus.PENDING) {
+            throw new IllegalStateException(
+                "Only pending expenses can be rejected"
+            );
+        }
+
+        status = ExpenseStatus.REJECTED;
     }
 
 
