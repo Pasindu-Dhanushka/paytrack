@@ -32,4 +32,15 @@ public class ExpenseController {
     public List<Expense> getAllExpenses() {
         return expenseService.getAllExpenses();
     }
+
+    @PatchMapping("/{id}/approve")
+    public Expense approveExpense(@PathVariable Long id) {
+        return expenseService.approveExpense(id);
+    }
+
+    @PatchMapping("/{id}/reject")
+    public Expense rejectExpense(@PathVariable Long id) {
+        return expenseService.rejectExpense(id);
+    }
+
 }
