@@ -16,8 +16,6 @@ services:
   app:
     build: .
     image: paytrack:1.0
-    ports:
-      - "8080:8080"
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/paytrack
       SPRING_DATASOURCE_USERNAME: paytrack
