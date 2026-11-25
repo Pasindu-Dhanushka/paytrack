@@ -20,6 +20,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/paytrack
       SPRING_DATASOURCE_USERNAME: paytrack
       DB_PASSWORD: ${POSTGRES_PASSWORD:?Set a database password}
+      PAYTRACK_APP_PASSWORD: ${PAYTRACK_APP_PASSWORD:?Set an application password}
     depends_on:
       db:
         condition: service_healthy
