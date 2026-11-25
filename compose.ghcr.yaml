@@ -1,0 +1,6 @@
+services:
+  app:
+    image: ghcr.io/pasindu-dhanushka/paytrack-backend:latest
+
+  frontend:
+    image: ghcr.io/pasindu-dhanushka/paytrack-frontend:latest
